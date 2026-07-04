@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="济州岛 8/8–8/14 逐日景点与美食攻略：名店 Google 地图链接、公交/打车交通、韩语中文对照">
+<title>济州岛 7 日行程 · Jeju Itinerary</title>
+<style>
+  :root{
+    --bg:#edf1ef; --surface:#ffffff; --surface-2:#f5f8f6;
+    --ink:#1b2427; --ink-soft:#566360; --ink-faint:#8b968f;
+    --line:#dbe3df;
+    --teal:#0f7a82; --teal-deep:#0a5860;
+    --hallabong:#cf6f23; --gold:#a8791f;
+    --shadow:0 1px 2px rgba(20,42,40,.05), 0 8px 24px rgba(20,42,40,.06);
+    --radius:14px;
+    --font-sans:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",Roboto,"Helvetica Neue",Arial,sans-serif;
+    --font-serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --bg:#0f1416; --surface:#161e20; --surface-2:#1b2427;
+      --ink:#e9f0ed; --ink-soft:#a4b3ae; --ink-faint:#6f7d78;
+      --line:#28322f;
+      --teal:#45c3cb; --teal-deep:#7ad7dc;
+      --hallabong:#f0a45c; --gold:#d8ab4e;
+      --shadow:0 1px 2px rgba(0,0,0,.3), 0 10px 28px rgba(0,0,0,.4);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0f1416; --surface:#161e20; --surface-2:#1b2427;
+    --ink:#e9f0ed; --ink-soft:#a4b3ae; --ink-faint:#6f7d78;
+    --line:#28322f;
+    --teal:#45c3cb; --teal-deep:#7ad7dc;
+    --hallabong:#f0a45c; --gold:#d8ab4e;
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 10px 28px rgba(0,0,0,.4);
+  }
+  :root[data-theme="light"]{
+    --bg:#edf1ef; --surface:#ffffff; --surface-2:#f5f8f6;
+    --ink:#1b2427; --ink-soft:#566360; --ink-faint:#8b968f;
+    --line:#dbe3df;
+    --teal:#0f7a82; --teal-deep:#0a5860;
+    --hallabong:#cf6f23; --gold:#a8791f;
+    --shadow:0 1px 2px rgba(20,42,40,.05), 0 8px 24px rgba(20,42,40,.06);
+  }
+
+  *{box-sizing:border-box;}
+  body{margin:0;}
+  .page{
+    background:var(--bg); color:var(--ink);
+    font-family:var(--font-sans);
+    line-height:1.6; -webkit-font-smoothing:antialiased;
+    padding:clamp(16px,4vw,40px) clamp(14px,4vw,24px) 64px;
+    display:flex; flex-direction:column; align-items:center; gap:26px;
+  }
+  .wrap{width:100%; max-width:860px; display:flex; flex-direction:column; gap:22px;}
+
+  /* ---- masthead ---- */
+  .masthead{position:relative; padding-top:14px;}
+  .horizon{height:4px; width:100%; border-radius:4px;
+    background:linear-gradient(90deg,var(--teal),var(--gold) 70%,var(--hallabong));
+    margin-bottom:20px;}
+  .eyebrow{font-size:.72rem; letter-spacing:.22em; text-transform:uppercase;
+    color:var(--teal-deep); font-weight:700; margin:0 0 8px;}
+  h1{margin:0; font-size:clamp(1.9rem,5.5vw,2.9rem); font-weight:800;
+    letter-spacing:-.01em; text-wrap:balance; line-height:1.12;}
+  .subtitle{font-family:var(--font-serif); font-style:italic;
+    font-size:clamp(1rem,2.6vw,1.25rem); color:var(--ink-soft); margin:6px 0 0;}
+  .meta{display:flex; flex-wrap:wrap; gap:8px; margin-top:16px;}
+  .tag{font-size:.78rem; padding:5px 11px; border-radius:999px;
+    background:var(--surface); border:1px solid var(--line); color:var(--ink-soft);
+    box-shadow:var(--shadow);}
+  .tag b{color:var(--ink); font-weight:700;}
+
+  /* ---- stay summary ---- */
+  .stay{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+  @media (max-width:600px){.stay{grid-template-columns:1fr;}}
+  .hotel{background:var(--surface); border:1px solid var(--line);
+    border-radius:var(--radius); padding:16px 18px; box-shadow:var(--shadow);
+    display:flex; flex-direction:column; gap:6px;}
+  .hotel .where{font-size:.74rem; letter-spacing:.04em; font-weight:700;
+    text-transform:uppercase;}
+  .hotel.south .where{color:var(--hallabong);}
+  .hotel.north .where{color:var(--teal);}
+  .hotel h3{margin:0; font-size:1.06rem; font-weight:800;}
+  .hotel .dates{font-family:var(--font-serif); color:var(--ink); font-size:.98rem;
+    font-variant-numeric:tabular-nums;}
+  .hotel .feat{font-size:.83rem; color:var(--ink-faint);}
+
+  /* ---- timeline ---- */
+  .timeline{display:flex; flex-direction:column; gap:16px;}
+  .day{background:var(--surface); border:1px solid var(--line);
+    border-left:4px solid var(--r); border-radius:var(--radius);
+    padding:18px clamp(16px,3vw,24px); box-shadow:var(--shadow);}
+  .day.r-north{--r:var(--teal);}
+  .day.r-south{--r:var(--hallabong);}
+  .day.r-east{--r:var(--gold);}
+
+  .day-head{display:flex; align-items:flex-start; gap:16px; flex-wrap:wrap;}
+  .daynum{display:flex; flex-direction:column; align-items:center; min-width:52px;
+    line-height:1;}
+  .d-label{font-size:.6rem; letter-spacing:.18em; font-weight:700;
+    color:var(--ink-faint); text-transform:uppercase;}
+  .d-num{font-family:var(--font-serif); font-size:2.5rem; font-weight:700;
+    color:var(--r); font-variant-numeric:tabular-nums;}
+  .head-main{flex:1; min-width:180px;}
+  .day-date{font-family:var(--font-serif); font-size:1.05rem; font-weight:700;
+    font-variant-numeric:tabular-nums;}
+  .day-date span{font-family:var(--font-sans); font-size:.8rem; font-weight:600;
+    color:var(--ink-faint); margin-left:7px;}
+  .day-title{font-size:1.24rem; font-weight:800; letter-spacing:-.01em; margin-top:1px;
+    text-wrap:balance;}
+  .chips{display:flex; flex-wrap:wrap; gap:6px; margin-top:9px;}
+  .chip{font-size:.72rem; font-weight:700; padding:3px 10px; border-radius:999px;
+    letter-spacing:.02em;}
+  .chip-region{color:var(--r); background:color-mix(in srgb,var(--r) 14%,transparent);}
+  .chip-conf{color:#fff; background:var(--teal-deep);}
+  @media (prefers-color-scheme:dark){.chip-conf{color:#08211f;}}
+  :root[data-theme="dark"] .chip-conf{color:#08211f;}
+  :root[data-theme="light"] .chip-conf{color:#fff;}
+  .chip-stay{color:var(--ink-soft); background:var(--surface-2);
+    border:1px solid var(--line);}
+
+  .day-body{display:grid; grid-template-columns:1.05fr .95fr; gap:14px 30px;
+    margin-top:16px; padding-top:16px; border-top:1px solid var(--line);}
+  @media (max-width:640px){.day-body{grid-template-columns:1fr; gap:18px;}}
+  .col-label{display:flex; align-items:center; gap:8px; margin:0 0 9px;
+    font-size:.82rem; font-weight:800; letter-spacing:.03em; color:var(--ink-soft);}
+  .col-label::before{content:""; width:9px; height:9px; border-radius:3px;}
+  .col-see .col-label::before{background:var(--r);}
+  .col-eat .col-label::before{background:var(--hallabong);}
+  ul.items{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:9px;}
+  ul.items li{font-size:.92rem; color:var(--ink-soft); padding-left:14px; position:relative;}
+  ul.items li::before{content:""; position:absolute; left:0; top:.62em;
+    width:5px; height:5px; border-radius:50%; background:var(--line);}
+  ul.items li b{color:var(--ink); font-weight:700;}
+  .lat{color:var(--ink-faint); font-size:.85em; font-style:italic;
+    font-family:var(--font-serif);}
+  .pick{display:inline-block; font-size:.68rem; font-weight:700; color:var(--hallabong);
+    border:1px solid color-mix(in srgb,var(--hallabong) 40%,transparent);
+    border-radius:4px; padding:0 5px; margin-right:5px; vertical-align:1px;}
+
+  .day-note{margin:14px 0 0; font-size:.82rem; color:var(--ink-faint);
+    background:var(--surface-2); border-radius:9px; padding:11px 13px;}
+  .day-note b{color:var(--ink-soft);}
+  .routes{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px;}
+  .route{display:inline-flex; align-items:center; gap:9px; text-decoration:none;
+    background:var(--surface); border:1px solid var(--line); border-radius:10px;
+    padding:7px 11px 7px 10px;}
+  .route:hover{border-color:var(--teal);
+    background:color-mix(in srgb,var(--teal) 8%,var(--surface));}
+  .route:focus-visible{outline:2px solid var(--teal); outline-offset:2px;}
+  .route .pin{font-size:.72rem; font-weight:800; color:var(--teal); white-space:nowrap;}
+  .route .pin::after{content:"↗"; margin-left:1px;}
+  .route .pts{font-size:.82rem; font-weight:700; color:var(--ink);}
+  .route .mode{font-size:.72rem; color:var(--ink-faint); white-space:nowrap;}
+  .route.taxi{border-color:color-mix(in srgb,var(--hallabong) 40%,var(--line));}
+  .route.taxi:hover{border-color:var(--hallabong);
+    background:color-mix(in srgb,var(--hallabong) 8%,var(--surface));}
+  .route.taxi .pin{color:var(--hallabong);}
+  .route.taxi:focus-visible{outline-color:var(--hallabong);}
+  .tour-note{display:inline-flex; align-items:center; gap:8px; margin-top:10px;
+    font-size:.8rem; font-weight:700; color:var(--gold);
+    background:color-mix(in srgb,var(--gold) 12%,transparent);
+    border:1px solid color-mix(in srgb,var(--gold) 30%,transparent);
+    border-radius:10px; padding:8px 12px;}
+
+  /* ---- reference cards ---- */
+  .refs{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+  @media (max-width:600px){.refs{grid-template-columns:1fr;}}
+  .card{background:var(--surface); border:1px solid var(--line);
+    border-radius:var(--radius); padding:20px; box-shadow:var(--shadow);}
+  .card h2{margin:0 0 4px; font-size:1.15rem; font-weight:800;}
+  .card .kicker{font-size:.75rem; color:var(--ink-faint); margin:0 0 14px;
+    font-family:var(--font-serif); font-style:italic;}
+  .pills{display:flex; flex-wrap:wrap; gap:8px;}
+  .pill{font-size:.82rem; padding:6px 11px; border-radius:8px; background:var(--surface-2);
+    border:1px solid var(--line); color:var(--ink);}
+  .pill .lat{margin-left:4px;}
+  .seen{display:flex; flex-direction:column; gap:9px;}
+  .seen div{font-size:.9rem; color:var(--ink); display:flex; gap:9px; align-items:baseline;}
+  .seen .day-ref{margin-left:auto; font-size:.72rem; font-weight:700; color:var(--teal);
+    font-family:var(--font-serif); font-variant-numeric:tabular-nums; white-space:nowrap;}
+  .seen .opt{color:var(--ink-faint);}
+
+  .spot{color:var(--teal); text-decoration:none; font-weight:700; white-space:nowrap;
+    border-bottom:1px solid color-mix(in srgb,var(--teal) 45%,transparent);}
+  .spot::after{content:"↗"; font-size:.72em; margin-left:2px; color:var(--ink-faint);
+    vertical-align:1px;}
+  .spot:hover{border-bottom-color:var(--teal);}
+  .spot:focus-visible{outline:2px solid var(--teal); outline-offset:2px; border-radius:3px;}
+
+  .maps{background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
+    padding:22px clamp(16px,3vw,24px); box-shadow:var(--shadow);}
+  .maps h2{margin:0 0 4px; font-size:1.15rem; font-weight:800;}
+  .maps .kicker{font-size:.75rem; color:var(--ink-faint); margin:0 0 18px;
+    font-family:var(--font-serif); font-style:italic;}
+  .maps-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+  @media (max-width:720px){.maps-grid{grid-template-columns:1fr; gap:20px;}}
+  .mcol h4{margin:0 0 12px; font-size:.82rem; font-weight:800; letter-spacing:.04em;
+    display:flex; align-items:center; gap:8px;}
+  .mcol h4::before{content:""; width:9px; height:9px; border-radius:3px; background:var(--mc);}
+  .mcol.north{--mc:var(--teal);} .mcol.south{--mc:var(--hallabong);} .mcol.east{--mc:var(--gold);}
+  .mcol.north h4{color:var(--teal);} .mcol.south h4{color:var(--hallabong);} .mcol.east h4{color:var(--gold);}
+  .mcol ul{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:13px;}
+  .mcol li{display:flex; flex-direction:column; gap:1px;}
+  .mcol li .spot{align-self:flex-start;}
+  .mcol .dish{font-size:.82rem; color:var(--ink); font-weight:600;}
+  .mcol .hrs{font-size:.75rem; color:var(--ink-faint);}
+  .mcol .note{font-size:.75rem; color:var(--ink-faint); font-style:italic;}
+
+  footer{width:100%; max-width:860px; font-size:.8rem; color:var(--ink-faint);
+    border-top:1px solid var(--line); padding-top:16px; line-height:1.7;}
+  footer b{color:var(--ink-soft);}
+</style>
+</head>
+<body>
+
+<div class="page">
+  <div class="wrap">
+
+    <header class="masthead">
+      <div class="horizon"></div>
+      <p class="eyebrow">KDD 2026 · 济州岛</p>
+      <h1>济州岛 7 日行程</h1>
+      <p class="subtitle">Jeju Island · Aug 8 – 14, 2026 · 2 位成人</p>
+      <div class="meta">
+        <span class="tag"><b>6</b> 晚 · <b>2</b> 家酒店</span>
+        <span class="tag">会场 <b>ICC Jeju</b>（中文旅游区）</span>
+        <span class="tag">无自驾 · 巴士 + 打车 + 跟团</span>
+        <span class="tag">返程 <b>TR8298 · 08/14 09:30</b></span>
+      </div>
+    </header>
+
+    <section class="stay">
+      <div class="hotel south">
+        <span class="where">南 · 中文会场区</span>
+        <h3>The Suites Hotel Jeju</h3>
+        <span class="dates">8/9 – 8/12 · 3 晚</span>
+        <span class="feat">室外泳池 · 健身房 · 步行 15 分钟到 ICC</span>
+      </div>
+      <div class="hotel north">
+        <span class="where">北 · 济州市</span>
+        <h3>Lotte City Hotel 机场店</h3>
+        <span class="dates">8/8（1 晚）· 8/12–8/14（2 晚）</span>
+        <span class="feat">离机场 7 分钟 · 一日游团接送点</span>
+      </div>
+    </section>
+
+    <main class="timeline">
+
+      <!-- DAY 1 -->
+      <article class="day r-north">
+        <div class="day-head">
+          <div class="daynum"><span class="d-label">Day</span><span class="d-num">1</span></div>
+          <div class="head-main">
+            <div class="day-date">8/8 <span>周六</span></div>
+            <div class="day-title">抵达 · 济州市漫步</div>
+            <div class="chips">
+              <span class="chip chip-region">北部</span>
+              <span class="chip chip-stay">宿 Lotte City</span>
+            </div>
+          </div>
+        </div>
+        <div class="day-body">
+          <div class="col col-see">
+            <p class="col-label">景点</p>
+            <ul class="items">
+              <li><b>龙头岩</b> <span class="lat">Yongduam</span> — 海边龙形玄武岩，连游龙渊步道，约 20 分钟</li>
+              <li><b>东门传统市场</b> <span class="lat">Dongmun Market</span> — 傍晚最热闹，边逛边吃</li>
+              <li><b>梨湖木岛海滩</b> <span class="lat">Iho Tewoo</span> — 马形灯塔，看日落（体力允许）</li>
+            </ul>
+          </div>
+          <div class="col col-eat">
+            <p class="col-label">美食</p>
+            <ul class="items">
+              <li><span class="pick">晚餐</span><b>济州黑猪炭烤</b> <span class="lat">흑돼지（黑猪肉）</span> — <a class="spot" href="https://www.google.com/maps/search/?api=1&amp;query=돈사돈%20제주" target="_blank" rel="noopener">돈사돈（敦沙敦）</a>，全岛第一必吃（周二休）</li>
+              <li><b>夜市小吃</b> — <a class="spot" href="https://www.google.com/maps/search/?api=1&amp;query=제주%20동문시장" target="_blank" rel="noopener">동문시장（东门市场）</a>：黑猪肉串、딱새우회（甜虾生鱼片）、오메기떡（济州小米年糕）</li>
+            </ul>
+          </div>
+        </div>
+        <div class="day-note"><b>交通：</b>抵达后打车 / 机场巴士到酒店；市区景点公交或打车。落地较晚就先歇脚，逛东门夜市吃宵夜。
+          <div class="routes">
+            <a class="route" href="https://www.google.com/maps/dir/?api=1&amp;origin=제주국제공항&amp;destination=롯데시티호텔%20제주&amp;travelmode=transit" target="_blank" rel="noopener"><span class="pin">路线</span><span class="pts">济州机场 → 乐天城市酒店</span><span class="mode">巴士/打车 ~10min</span></a>
+            <a class="route" href="https://www.google.com/maps/dir/?api=1&amp;origin=롯데시티호텔%20제주&amp;destination=용두암&amp;travelmode=transit" target="_blank" rel="noopener"><span class="pin">路线</span><span class="pts">乐天城市 → 龙头岩</span><span class="mode">公交/打车</span></a>
+          </div>
+        </div>
+      </article>
+
+      <!-- DAY 2 -->
+      <article class="day r-south">
+        <div class="day-head">
+          <div class="daynum"><span class="d-label">Day</span><span class="d-num">2</span></div>
+          <div class="head-main">
+            <div class="day-date">8/9 <span>周日</span></div>
+            <div class="day-title">转场中文区 · 海崖与瀑布</div>
+            <div class="chips">
+              <span class="chip chip-region">南部</span>
+              <span class="chip chip-stay">宿 The Suites</span>
+            </div>
+          </div>
+        </div>
+        <div class="day-body">
+          <div class="col col-see">
+            <p class="col-label">景点</p>
+            <ul class="items">
+              <li><b>大浦海岸柱状节理带</b> <span class="lat">Jusangjeolli Cliff</span> — 六角玄武岩海崖，日落绝美</li>
+              <li><b>天帝渊瀑布</b> <span class="lat">Cheonjeyeon Falls</span> — 三段瀑布 + 仙临桥</li>
+              <li><b>中文·色达海滩</b> — 酒店旁 450m，散步看海</li>
+            </ul>
+          </div>
+          <div class="col col-eat">
+            <p class="col-label">美食</p>
+            <ul class="items">
+              <li><span class="pick">晚餐</span><a class="spot" href="https://www.google.com/maps/search/?api=1&amp;query=서귀포%20매일올레시장" target="_blank" rel="noopener">서귀포 매일올레시장（西归浦每日偶来市场）</a> — 边逛边尝 딱새우회（甜虾生鱼片）</li>
+              <li><b>带鱼炖 / 带鱼汤</b> <span class="lat">갈치조림（炖带鱼）</span> — <a class="spot" href="https://www.google.com/maps/search/?api=1&amp;query=네거리식당%20서귀포" target="_blank" rel="noopener">네거리식당（十字路口食堂）</a>（20 年老店，附赠烤鲭鱼 고등어（鲭鱼））</li>
+            </ul>
+          </div>
+        </div>
+        <div class="day-note"><b>交通：</b>济州市→中文区，机场利木津 <b>600 路</b> 或急行巴士约 1 小时；入住 The Suites 后就近活动，不折腾。
+          <div class="routes">
+            <a class="route" href="https://www.google.com/maps/dir/?api=1&amp;origin=롯데시티호텔%20제주&amp;destination=더스위트호텔%20제주&amp;travelmode=transit" target="_blank" rel="noopener"><span class="pin">路线</span><span class="pts">乐天城市 → The Suites</span><span class="mode">利木津600/急行 ~1h</span></a>
+            <a class="route" href="https://www.google.com/maps/dir/?api=1&amp;origin=더스위트호텔%20제주&amp;destination=대포주상절리대&amp;travelmode=transit" target="_blank" rel="noopener"><span class="pin">路线</span><span class="pts">The Suites → 柱状节理带</span><span class="mode">公交/打车</span></a>
+          </div>
+        </div>
+      </article>
+
+      <!-- DAY 3 -->
+      <article class="day r-south">
+        <div class="day-head">
+          <div class="daynum"><span class="d-label">Day</span><span class="d-num">3</span></div>
+          <div class="head-main">
+            <div class="day-date">8/10 <span>周一</span></div>
+            <div class="day-title">会议 Day 1 · 你的 Talk</div>
+            <div class="chips">
+              <span class="chip chip-conf">会议日</span>
+              <span class="chip chip-region">南部</span>
+              <span class="chip chip-stay">宿 The Suites</span>
+            </div>
+          </div>
+        </div>
+        <div class="day-body">
+          <div class="col col-see">
+            <p class="col-label">景点</p>
+            <ul class="items">
+              <li><b>你：</b>ICC 会场（酒店步行 15 分钟 / 打车 5 分钟）</li>
+              <li><b>太太·上午：</b>酒店泳池 · 健身 · Spa</li>
+              <li><b>太太·下午：</b>泰迪熊博物馆（650m）/ 如美地植物园 <span class="lat">Yeomiji</span></li>
+            </ul>
+          </div>
+          <div class="col col-eat">
+            <p class="col-label">美食</p>
+            <ul class="items">
+              <li><b>太太午餐：</b>酒店 / 中文区 café</li>
+              <li><span class="pick">晚餐</span><b>通带鱼炖 / 鲭鱼炖</b> <span class="lat">통갈치조림（整条带鱼炖）</span> — <a class="spot" href="https://www.google.com/maps/search/?api=1&amp;query=색달식당%20중문갈치조림" target="_blank" rel="noopener">색달식당（色达食堂）</a>（中文名店）</li>
+            </ul>
+          </div>
+        </div>
+        <div class="day-note"><b>提示：</b>会议期间以酒店为大本营，太太靠步行 + 短途打车即可；傍晚你散会后两人一起吃饭。
+          <div class="routes">
+            <a class="route" href="https://www.google.com/maps/dir/?api=1&amp;origin=더스위트호텔%20제주&amp;destination=제주국제컨벤션센터&amp;travelmode=walking" target="_blank" rel="noopener"><span class="pin">路线</span><span class="pts">The Suites → ICC 会场</span><span class="mode">步行 ~15min</span></a>
+            <a class="route" href="https://www.google.com/maps/dir/?api=1&amp;origin=더스위트호텔%20제주&amp;destination=색달식당%20중문갈치조림&amp;travelmode=transit" target="_blank" rel="noopener"><span class="pin">路线</span><span class="pts">The Suites → 색달식당（晚餐）</span><span class="mode">公交/打车</span></a>
+          </div>
+        </div>
+      </article>
+
+      <!-- DAY 4 -->
+      <article class="day r-south">
+        <div class="day-head">
+          <div class="daynum"><span class="d-label">Day</span><span class="d-num">4</span></div>
+          <div class="head-main">
+            <div class="day-date">8/11 <span>周二</span></div>
+            <div class="day-title">会议 Day 2 · 茶园或瀑布</div>
+            <div class="chips">
+              <span class="chip chip-conf">会议日</span>
+              <span class="chip chip-region">南部</span>
+              <span class="chip chip-stay">宿 The Suites</span>
+            </div>
+          </div>
+        </div>
+        <div class="day-body">
+          <div class="col col-see">
+            <p class="col-label">景点</p>
+            <ul class="items">
+              <li><b>你：</b>ICC 会场</li>
+              <li><b>太太 A：</b>泳池 / Spa 慵懒日</li>
+              <li><b>太太 B：</b>打车去 <b>오설록（雪绿）</b> 绿茶博物馆 + 茶园（约 30 分钟，抹茶甜品）</li>
+              <li><b>太太 C：</b>天地渊瀑布 / <b>正房瀑布</b> <span class="lat">Jeongbang</span>（直落海中）</li>
+            </ul>
+          </div>
+          <div class="col col-eat">
+            <p class="col-label">美食</p>
+            <ul class="items">
+              <li><span class="pick">晚餐</span><b>物会</b> <span class="lat">물회（冰镇生鱼汤）</span> — 자리（小海鱼）/ 한치（小鱿鱼）两款；<a class="spot" href="https://www.google.com/maps/search/?api=1&amp;query=어진이네횟집%20서귀포" target="_blank" rel="noopener">어진이네횟집（鱼真家生鱼片店）</a>（보목（甫木）港·자리물회一绝，8 月한치正当季）</li>
+              <li><b>绿茶博物馆 & 甜品</b> <span class="lat">녹차（绿茶）</span> — <a class="spot" href="https://www.google.com/maps/search/?api=1&amp;query=오설록%20티뮤지엄" target="_blank" rel="noopener">오설록 티뮤지엄（雪绿茶博物馆）</a>（太太 B 行程顺路）</li>
+            </ul>
+          </div>
+        </div>
+        <div class="day-note"><b>提示：</b>傍晚两人可去正房瀑布或西归浦港散步；这是会场区最后一晚，把想吃的海鲜 / 鲍鱼补齐。
+          <div class="routes">
+            <a class="route taxi" href="https://www.google.com/maps/search/?api=1&amp;query=오설록%20티뮤지엄" target="_blank" rel="noopener"><span class="pin">打车</span><span class="pts">→ 雪绿茶博物馆 오설록</span><span class="mode">终点·给司机看 ~30min</span></a>
+            <a class="route" href="https://www.google.com/maps/dir/?api=1&amp;origin=더스위트호텔%20제주&amp;destination=정방폭포&amp;travelmode=transit" target="_blank" rel="noopener"><span class="pin">路线</span><span class="pts">The Suites → 正房瀑布</span><span class="mode">公交/打车</span></a>
+          </div>
+        </div>
+      </article>
+
+      <!-- DAY 5 -->
+      <article class="day r-north">
+        <div class="day-head">
+          <div class="daynum"><span class="d-label">Day</span><span class="d-num">5</span></div>
+          <div class="head-main">
+            <div class="day-date">8/12 <span>周三</span></div>
+            <div class="day-title">退房北返 · 济州市</div>
+            <div class="chips">
+              <span class="chip chip-region">北部</span>
+              <span class="chip chip-stay">宿 Lotte City</span>
+            </div>
+          </div>
+        </div>
+        <div class="day-body">
+          <div class="col col-see">
+            <p class="col-label">景点</p>
+            <ul class="items">
+              <li><b>上午：</b>中文区退房 → 济州市（约 1 小时）→ 入住 Lotte City</li>
+              <li><b>市区：</b>沙罗峰 <span class="lat">Sarabong</span> 日落 / 三姓穴 / 国立济州博物馆</li>
+              <li><b>西侧（若早）：</b>涯月 <span class="lat">Aewol</span> 汉潭海岸咖啡街散步</li>
+            </ul>
+          </div>
+          <div class="col col-eat">
+            <p class="col-label">美食</p>
+            <ul class="items">
+              <li><span class="pick">晚餐</span><b>猪肉汤面</b> <span class="lat">고기국수（猪肉汤面）</span> — <a class="spot" href="https://www.google.com/maps/search/?api=1&amp;query=올래국수%20제주" target="_blank" rel="noopener">올래국수（偶来面馆）</a> 或 <a class="spot" href="https://www.google.com/maps/search/?api=1&amp;query=자매국수%20제주" target="_blank" rel="noopener">자매국수（姐妹面馆）</a>（近机场）</li>
+              <li><span class="pick">午餐</span><b>蕨菜牛肉汤</b> <span class="lat">고사리육개장（蕨菜牛肉汤）</span> — <a class="spot" href="https://www.google.com/maps/search/?api=1&amp;query=우진해장국%20제주" target="_blank" rel="noopener">우진해장국（宇进解酒汤）</a>（济州乡土招牌，早 6 点开）</li>
+            </ul>
+          </div>
+        </div>
+        <div class="day-note"><b>交通：</b>中文区→济州市，机场大巴 / 急行巴士约 1 小时。会议结束后这天以休整 + 轻松市区游为主。
+          <div class="routes">
+            <a class="route" href="https://www.google.com/maps/dir/?api=1&amp;origin=더스위트호텔%20제주&amp;destination=롯데시티호텔%20제주&amp;travelmode=transit" target="_blank" rel="noopener"><span class="pin">路线</span><span class="pts">The Suites → 乐天城市酒店</span><span class="mode">机场大巴/急行 ~1h</span></a>
+            <a class="route" href="https://www.google.com/maps/dir/?api=1&amp;origin=롯데시티호텔%20제주&amp;destination=사라봉&amp;travelmode=transit" target="_blank" rel="noopener"><span class="pin">路线</span><span class="pts">乐天城市 → 沙罗峰</span><span class="mode">公交/打车</span></a>
+          </div>
+        </div>
+      </article>
+
+      <!-- DAY 6 -->
+      <article class="day r-east">
+        <div class="day-head">
+          <div class="daynum"><span class="d-label">Day</span><span class="d-num">6</span></div>
+          <div class="head-main">
+            <div class="day-date">8/13 <span>周四</span></div>
+            <div class="day-title">东部一日游团 · 名景全打卡</div>
+            <div class="chips">
+              <span class="chip chip-region">东部 · 跟团</span>
+              <span class="chip chip-stay">宿 Lotte City</span>
+            </div>
+          </div>
+        </div>
+        <div class="day-body">
+          <div class="col col-see">
+            <p class="col-label">景点（导游+车全包）</p>
+            <ul class="items">
+              <li><b>城山日出峰</b> <span class="lat">Seongsan Ilchulbong</span> — UNESCO 火山口，头号必打卡</li>
+              <li><b>涉地可支</b> <span class="lat">Seopjikoji</span> — 海岬灯塔、影视取景地</li>
+              <li><b>万丈窟</b> <span class="lat">Manjanggul</span> — UNESCO 熔岩洞</li>
+              <li><b>城邑民俗村</b> <span class="lat">Seongeup</span> — 常含山君不离火山口 / 榧子林 / 海女表演</li>
+            </ul>
+          </div>
+          <div class="col col-eat">
+            <p class="col-label">美食</p>
+            <ul class="items">
+              <li><span class="pick">午餐</span><b>团餐</b> — 多为乡土定食 / 黑猪</li>
+              <li><b>鲍鱼石锅饭</b> <span class="lat">전복돌솥밥（鲍鱼石锅拌饭）</span> — <a class="spot" href="https://www.google.com/maps/search/?api=1&amp;query=명진전복%20구좌" target="_blank" rel="noopener">명진전복（明进鲍鱼）</a>（东部 구좌（旧左）海岸名店，周二休）</li>
+              <li><span class="pick">晚餐</span><b>告别海鲜餐</b> — 回济州市，동문시장（东门市场）/ 甜虾刺身 / 烤带鱼</li>
+            </ul>
+          </div>
+        </div>
+        <div class="day-note"><b>交通：</b>此日为跟团，全程团车接送，<b>无需自己安排交通</b>。团一般傍晚回市区，晚上从容吃告别餐、早点休息。
+          <div class="tour-note">🚌 一日游团车全程接送 · Lotte City 是接送点 · 无需自理交通</div>
+        </div>
+      </article>
+
+      <!-- DAY 7 -->
+      <article class="day r-north">
+        <div class="day-head">
+          <div class="daynum"><span class="d-label">Day</span><span class="d-num">7</span></div>
+          <div class="head-main">
+            <div class="day-date">8/14 <span>周五</span></div>
+            <div class="day-title">返程 · 早班机</div>
+            <div class="chips">
+              <span class="chip chip-region">北部 · 离岛</span>
+            </div>
+          </div>
+        </div>
+        <div class="day-body">
+          <div class="col col-see">
+            <p class="col-label">安排</p>
+            <ul class="items">
+              <li>酒店早餐 → 机场（7 分钟）→ <b>TR8298 09:30</b> 起飞</li>
+              <li>约 <b>07:15</b> 出发去机场，预留值机安检时间</li>
+            </ul>
+          </div>
+          <div class="col col-eat">
+            <p class="col-label">手信</p>
+            <ul class="items">
+              <li><b>한라봉巧克力 · 오설록绿茶 · 蜜柑制品</b></li>
+              <li>机场免税店 & 便利店都能买齐</li>
+            </ul>
+          </div>
+        </div>
+        <div class="day-note"><b>提示：</b>9:30 属早班机，前一晚已住在济州市近机场，出发当天不用跨岛奔波，从容赶机。
+          <div class="routes">
+            <a class="route taxi" href="https://www.google.com/maps/search/?api=1&amp;query=제주국제공항" target="_blank" rel="noopener"><span class="pin">打车</span><span class="pts">→ 济州国际机场</span><span class="mode">早班机建议 ~7min</span></a>
+          </div>
+        </div>
+      </article>
+
+    </main>
+
+    <section class="refs">
+      <div class="card">
+        <h2>必吃清单</h2>
+        <p class="kicker">Jeju must-eat — 挑着打卡</p>
+        <div class="pills">
+          <span class="pill">흑돼지（黑猪烤肉）</span>
+          <span class="pill">갈치（带鱼）</span>
+          <span class="pill">전복（鲍鱼）</span>
+          <span class="pill">물회（冰镇生鱼汤）</span>
+          <span class="pill">고기국수（猪肉汤面）</span>
+          <span class="pill">딱새우회（甜虾生鱼片）</span>
+          <span class="pill">고등어（烤鲭鱼）</span>
+          <span class="pill">성게미역국（海胆海带汤）</span>
+          <span class="pill">오메기떡（济州小米年糕）</span>
+          <span class="pill">오설록 녹차（雪绿绿茶）</span>
+          <span class="pill">한라봉（汉拿峰柑橘）</span>
+        </div>
+      </div>
+      <div class="card">
+        <h2>名景打卡清单</h2>
+        <p class="kicker">别错过的招牌景点</p>
+        <div class="seen">
+          <div><span>城山日出峰</span><span class="day-ref">Day 6</span></div>
+          <div><span>万丈窟熔岩洞</span><span class="day-ref">Day 6</span></div>
+          <div><span>涉地可支</span><span class="day-ref">Day 6</span></div>
+          <div><span>柱状节理带海崖</span><span class="day-ref">Day 2</span></div>
+          <div><span>三大瀑布（天帝渊/天地渊/正房）</span><span class="day-ref">Day 2·4</span></div>
+          <div><span>龙头岩 · 东门市场</span><span class="day-ref">Day 1</span></div>
+          <div><span>오설록 绿茶园</span><span class="day-ref">Day 4</span></div>
+          <div><span class="opt">汉拿山 / 牛岛（时间足再加）</span><span class="day-ref opt">可选</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="maps">
+      <h2>名店速查 · 点名字打开 Google 地图</h2>
+      <p class="kicker">Tap a name → Google Maps · 营业时间以当天实况为准，热门店建议错峰或提前排队</p>
+      <div class="maps-grid">
+        <div class="mcol north">
+          <h4>北 · 济州市</h4>
+          <ul>
+            <li><a class="spot" href="https://www.google.com/maps/search/?api=1&amp;query=돈사돈%20제주" target="_blank" rel="noopener">돈사돈（敦沙敦）</a><span class="dish">흑돼지（黑猪炭烤）</span><span class="hrs">12:00–22:00 · 周二休</span></li>
+            <li><a class="spot" href="https://www.google.com/maps/search/?api=1&amp;query=올래국수%20제주" target="_blank" rel="noopener">올래국수（偶来面馆）</a><span class="dish">고기국수（猪肉汤面）</span><span class="hrs">单一菜单 · 常排队</span></li>
+            <li><a class="spot" href="https://www.google.com/maps/search/?api=1&amp;query=자매국수%20제주" target="_blank" rel="noopener">자매국수（姐妹面馆）</a><span class="dish">고기국수（猪肉汤面·元祖）· 近机场</span></li>
+            <li><a class="spot" href="https://www.google.com/maps/search/?api=1&amp;query=우진해장국%20제주" target="_blank" rel="noopener">우진해장국（宇进解酒汤）</a><span class="dish">고사리육개장（蕨菜牛肉汤）</span><span class="hrs">06:00–22:00 · 无休</span></li>
+            <li><a class="spot" href="https://www.google.com/maps/search/?api=1&amp;query=제주%20동문시장" target="_blank" rel="noopener">동문시장（东门市场）</a><span class="dish">夜市小吃 · 딱새우회（甜虾生鱼片）</span></li>
+          </ul>
+        </div>
+        <div class="mcol south">
+          <h4>南 · 西归浦 / 中文</h4>
+          <ul>
+            <li><a class="spot" href="https://www.google.com/maps/search/?api=1&amp;query=색달식당%20중문갈치조림" target="_blank" rel="noopener">색달식당（色达食堂）</a><span class="dish">통갈치조림（整条带鱼炖）· 近中文</span></li>
+            <li><a class="spot" href="https://www.google.com/maps/search/?api=1&amp;query=네거리식당%20서귀포" target="_blank" rel="noopener">네거리식당（十字路口食堂）</a><span class="dish">갈치조림（炖带鱼）· 附赠烤鲭鱼</span></li>
+            <li><a class="spot" href="https://www.google.com/maps/search/?api=1&amp;query=어진이네횟집%20서귀포" target="_blank" rel="noopener">어진이네횟집（鱼真家生鱼片店）</a><span class="dish">물회（冰镇生鱼汤）· 보목（甫木）港</span></li>
+            <li><a class="spot" href="https://www.google.com/maps/search/?api=1&amp;query=오설록%20티뮤지엄" target="_blank" rel="noopener">오설록 티뮤지엄（雪绿茶博物馆）</a><span class="dish">绿茶博物馆 & 抹茶甜品</span></li>
+            <li><a class="spot" href="https://www.google.com/maps/search/?api=1&amp;query=서귀포%20매일올레시장" target="_blank" rel="noopener">서귀포 매일올레시장（西归浦每日偶来市场）</a><span class="dish">偶来市场 · 边逛边吃</span></li>
+          </ul>
+        </div>
+        <div class="mcol east">
+          <h4>东 · 구좌（旧左）海岸（Day 6 顺路）</h4>
+          <ul>
+            <li><a class="spot" href="https://www.google.com/maps/search/?api=1&amp;query=명진전복%20구좌" target="_blank" rel="noopener">명진전복（明进鲍鱼）</a><span class="dish">전복돌솥밥（鲍鱼石锅拌饭）</span><span class="hrs">09:30–21:00 · 周二休</span></li>
+            <li><span class="note">东部一日游多含团餐；如自由行经过海女海岸，명진전복（明进鲍鱼）值得专门加一顿。</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    <b>关于交通链接：</b><b style="color:var(--teal)">蓝色「路线」</b> = 公交 / 步行路线（Google 可显示巴士与站点）；<b style="color:var(--hallabong)">橙色「打车」</b> = 终点定位。Google 地图在韩国<b>不支持驾车导航</b>，打车时只需把终点给司机看，司机用 Kakao&nbsp;T / T-map 自己导航；到当地实时查公交/打车，<b>KakaoMap（카카오맵）或 Naver Map</b> 比 Google 更准。<br>
+    <b>说明：</b>本行程按「无自驾 · 巴士 + 打车 + 跟团」设计，会议日（8/10–8/11）以酒店为大本营。餐厅<b>营业时间 / 是否需预约请出行前再确认</b>；<b>Day 6 东部一日游团</b>建议在 Klook / KKday / 携程 上提前预订济州市出发、含中 / 英文导游的口碑团。
+  </footer>
+</div>
+
+</body>
+</html>
