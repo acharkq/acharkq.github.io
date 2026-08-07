@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
 <meta name="robots" content="noindex, nofollow">
-<meta name="description" content="济州岛 8/8–8/14 逐日景点与美食攻略：名店 Google 地图链接、公交/打车交通、韩语中文对照">
+<meta name="description" content="济州岛 8/8–8/14 逐日景点、美食与夜生活攻略：名店 Google 地图链接、公交/打车交通、韩语中文对照">
 <title>济州岛 7 日行程 · Jeju Itinerary</title>
 <style>
   :root{
@@ -13,7 +13,7 @@
     --ink:#1b2427; --ink-soft:#566360; --ink-faint:#8b968f;
     --line:#dbe3df;
     --teal:#0f7a82; --teal-deep:#0a5860;
-    --hallabong:#cf6f23; --gold:#a8791f;
+    --hallabong:#cf6f23; --gold:#a8791f; --night:#6a52c9;
     --shadow:0 1px 2px rgba(20,42,40,.05), 0 8px 24px rgba(20,42,40,.06);
     --radius:14px;
     --font-sans:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",Roboto,"Helvetica Neue",Arial,sans-serif;
@@ -25,7 +25,7 @@
       --ink:#e9f0ed; --ink-soft:#a4b3ae; --ink-faint:#6f7d78;
       --line:#28322f;
       --teal:#45c3cb; --teal-deep:#7ad7dc;
-      --hallabong:#f0a45c; --gold:#d8ab4e;
+      --hallabong:#f0a45c; --gold:#d8ab4e; --night:#a996f5;
       --shadow:0 1px 2px rgba(0,0,0,.3), 0 10px 28px rgba(0,0,0,.4);
     }
   }
@@ -34,7 +34,7 @@
     --ink:#e9f0ed; --ink-soft:#a4b3ae; --ink-faint:#6f7d78;
     --line:#28322f;
     --teal:#45c3cb; --teal-deep:#7ad7dc;
-    --hallabong:#f0a45c; --gold:#d8ab4e;
+    --hallabong:#f0a45c; --gold:#d8ab4e; --night:#a996f5;
     --shadow:0 1px 2px rgba(0,0,0,.3), 0 10px 28px rgba(0,0,0,.4);
   }
   :root[data-theme="light"]{
@@ -42,7 +42,7 @@
     --ink:#1b2427; --ink-soft:#566360; --ink-faint:#8b968f;
     --line:#dbe3df;
     --teal:#0f7a82; --teal-deep:#0a5860;
-    --hallabong:#cf6f23; --gold:#a8791f;
+    --hallabong:#cf6f23; --gold:#a8791f; --night:#6a52c9;
     --shadow:0 1px 2px rgba(20,42,40,.05), 0 8px 24px rgba(20,42,40,.06);
   }
 
@@ -167,6 +167,37 @@
     border:1px solid color-mix(in srgb,var(--gold) 30%,transparent);
     border-radius:10px; padding:8px 12px;}
 
+  /* ---- nightlife ---- */
+  .night{margin:14px 0 0; padding:13px 15px; border-radius:11px;
+    border:1px solid color-mix(in srgb,var(--night) 30%,var(--line));
+    background:color-mix(in srgb,var(--night) 7%,var(--surface-2));}
+  .night h5{margin:0; font-size:.86rem; font-weight:800; letter-spacing:.02em;
+    color:var(--night); display:flex; align-items:center; gap:7px;}
+  .night h5::before{content:"☾";}
+  .night .n-kicker{margin:3px 0 11px; font-size:.75rem; color:var(--ink-faint);
+    font-family:var(--font-serif); font-style:italic; line-height:1.55;}
+  .night .plan + .plan{margin-top:14px; padding-top:13px;
+    border-top:1px dashed color-mix(in srgb,var(--night) 28%,var(--line));}
+  .plan-h{font-size:.83rem; font-weight:800; color:var(--ink);}
+  .plan-h .badge{display:inline-block; font-size:.66rem; font-weight:800;
+    letter-spacing:.04em; border-radius:4px; padding:1px 7px; margin-right:7px;
+    vertical-align:1px; color:#fff; background:var(--night);}
+  .plan-h .badge.alt{color:var(--night); background:transparent;
+    border:1px solid color-mix(in srgb,var(--night) 45%,transparent);}
+  @media (prefers-color-scheme:dark){.plan-h .badge{color:#171029;}}
+  :root[data-theme="dark"] .plan-h .badge{color:#171029;}
+  :root[data-theme="light"] .plan-h .badge{color:#fff;}
+  :root[data-theme="dark"] .plan-h .badge.alt,
+  :root[data-theme="light"] .plan-h .badge.alt{color:var(--night);}
+  .night ul.items{margin-top:8px;}
+  .night ul.items li{font-size:.87rem;}
+  .warn{margin-top:13px; padding:11px 13px; border-radius:9px;
+    background:color-mix(in srgb,var(--hallabong) 10%,transparent);
+    border:1px solid color-mix(in srgb,var(--hallabong) 30%,transparent);
+    font-size:.79rem; color:var(--ink-soft); line-height:1.75;}
+  .warn .warn-h{color:var(--hallabong); font-weight:800; letter-spacing:.02em;}
+  .warn b{color:var(--ink);}
+
   /* ---- reference cards ---- */
   .refs{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
   @media (max-width:600px){.refs{grid-template-columns:1fr;}}
@@ -202,7 +233,10 @@
   .mcol h4{margin:0 0 12px; font-size:.82rem; font-weight:800; letter-spacing:.04em;
     display:flex; align-items:center; gap:8px;}
   .mcol h4::before{content:""; width:9px; height:9px; border-radius:3px; background:var(--mc);}
+  .maps-grid.g2{grid-template-columns:repeat(2,1fr);}
+  @media (max-width:720px){.maps-grid.g2{grid-template-columns:1fr;}}
   .mcol.north{--mc:var(--teal);} .mcol.south{--mc:var(--hallabong);} .mcol.east{--mc:var(--gold);}
+  .mcol.club{--mc:var(--night);} .mcol.club h4{color:var(--night);}
   .mcol.north h4{color:var(--teal);} .mcol.south h4{color:var(--hallabong);} .mcol.east h4{color:var(--gold);}
   .mcol ul{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:13px;}
   .mcol li{display:flex; flex-direction:column; gap:1px;}
@@ -281,6 +315,20 @@
             </ul>
           </div>
         </div>
+        <div class="night">
+          <h5>夜店 · 今晚其实是全程最佳时机</h5>
+          <p class="n-kicker">周六 + 人已经在济州市 = 唯一一个「出门就是夜店街、回酒店 5 分钟」的晚上。</p>
+          <ul class="items">
+            <li><b>연동 누웨모루거리</b> <span class="lat">连洞 · 原 바오젠거리（宝健路）</span> — 距 Lotte City 打车 <b>5–8 分钟 / ₩5,000 上下</b>，club 与酒吧密集</li>
+            <li><b>周六是全周唯一的满场夜</b> — club 常开到 03:00–05:00，23:30 后进场刚好；平日只到 02:00 且人稀</li>
+            <li><b>明天没有硬时间点</b> — 8/9 只是转场中文区，晚起也不影响；对比 8/9 那晚要跨岛来回打车 ₩10 万＋、且第二天你有 talk，今晚划算太多</li>
+            <li>店家清单与避坑须知见页尾<b>「夜店速查」</b>与 Day 2 的说明</li>
+          </ul>
+          <div class="routes">
+            <a class="route taxi" href="https://www.google.com/maps/search/?api=1&amp;query=제주%20누웨모루거리" target="_blank" rel="noopener"><span class="pin">打车</span><span class="pts">乐天城市 → 누웨모루거리</span><span class="mode">~5–8min · ₩5,000</span></a>
+            <a class="route taxi" href="https://www.google.com/maps/search/?api=1&amp;query=롯데시티호텔%20제주" target="_blank" rel="noopener"><span class="pin">打车</span><span class="pts">연동 → 乐天城市（返程）</span><span class="mode">深夜也就 ₩6,000–8,000</span></a>
+          </div>
+        </div>
         <div class="day-note"><b>交通：</b>抵达后打车 / 机场巴士到酒店；市区景点公交或打车。落地较晚就先歇脚，逛东门夜市吃宵夜。
           <div class="routes">
             <a class="route" href="https://www.google.com/maps/dir/?api=1&amp;origin=제주국제공항&amp;destination=롯데시티호텔%20제주&amp;travelmode=transit" target="_blank" rel="noopener"><span class="pin">路线</span><span class="pts">济州机场 → 乐天城市酒店</span><span class="mode">巴士/打车 ~10min</span></a>
@@ -317,6 +365,45 @@
               <li><span class="pick">晚餐</span><a class="spot" href="https://www.google.com/maps/search/?api=1&amp;query=서귀포%20매일올레시장" target="_blank" rel="noopener">서귀포 매일올레시장（西归浦每日偶来市场）</a> — 边逛边尝 딱새우회（甜虾生鱼片）</li>
               <li><b>带鱼炖 / 带鱼汤</b> <span class="lat">갈치조림（炖带鱼）</span> — <a class="spot" href="https://www.google.com/maps/search/?api=1&amp;query=네거리식당%20서귀포" target="_blank" rel="noopener">네거리식당（十字路口食堂）</a>（20 年老店，附赠烤鲭鱼 고등어（鲭鱼））</li>
             </ul>
+          </div>
+        </div>
+        <div class="night">
+          <h5>夜店 · 8/9 周日晚</h5>
+          <p class="n-kicker">先说实话：中文 / 西归浦一带<b>没有真正的 club</b>，济州的夜店全部集中在北边济州市的 연동（连洞）。所以这晚是二选一。</p>
+
+          <div class="plan">
+            <div class="plan-h"><span class="badge">方案 A</span>就近微醺 · 不影响明天你的 Talk</div>
+            <ul class="items">
+              <li><b>济州神话世界</b> <span class="lat">제주신화월드（神话世界）</span> — 中文区打车约 20 分钟。<b>랜딩카지노（Landing 赌场）</b>24 小时营业、<b>仅限外国人</b>（凭护照入场）；园区 20:00 后转 no-kids、放 club 音乐，是离会场最近的「夜场」</li>
+              <li><b>西归浦港酒吧带</b> <span class="lat">서귀포항（西归浦港）· 이중섭거리（李仲燮街）</span> — 小酒吧 + 호프집（啤酒屋）为主，夏夜有露天座；<b>基本 24:00 前打烊</b></li>
+              <li><b>酒店 lounge</b> — The Suites 与中文区各酒店的大堂吧，最省事的收尾，走回房间 3 分钟</li>
+            </ul>
+            <div class="routes">
+              <a class="route taxi" href="https://www.google.com/maps/search/?api=1&amp;query=제주신화월드" target="_blank" rel="noopener"><span class="pin">打车</span><span class="pts">The Suites → 신화월드</span><span class="mode">~20min · ₩20,000 上下</span></a>
+              <a class="route" href="https://www.google.com/maps/dir/?api=1&amp;origin=더스위트호텔%20제주&amp;destination=서귀포항&amp;travelmode=transit" target="_blank" rel="noopener"><span class="pin">路线</span><span class="pts">The Suites → 서귀포항（酒吧带）</span><span class="mode">公交/打车 ~30min</span></a>
+            </div>
+          </div>
+
+          <div class="plan">
+            <div class="plan-h"><span class="badge alt">方案 B</span>杀回济州市 · 연동 夜店街（真蹦迪）</div>
+            <ul class="items">
+              <li><b>누웨모루거리</b> <span class="lat">Nuwemaru 街，原 바오젠거리（宝健路）</span> — 济州夜生活主街，club / 酒吧 / 深夜烤肉走路全能到</li>
+              <li><a class="spot" href="https://www.google.com/maps/search/?api=1&amp;query=제주%20클럽링크" target="_blank" rel="noopener">클럽링크（Club Link）</a> — 힙합 라운지（嘻哈 lounge），20:30–05:00、<b>全年无休</b>，平日常免入场 + 送 1 杯 → <b>周日最稳的一家</b></li>
+              <li><a class="spot" href="https://www.google.com/maps/search/?api=1&amp;query=제주%20몽키비치" target="_blank" rel="noopener">몽키비치（Monkey Beach）</a> — 大场地 EDM / 힙합，通常免入场费</li>
+              <li><a class="spot" href="https://www.google.com/maps/search/?api=1&amp;query=제주%20레드제플린" target="_blank" rel="noopener">레드제플린（Led Zeppelin）</a> — 街上的黑胶唱片吧，周末有 live；两人小酌听歌比蹦迪舒服，也更适合太太</li>
+              <li><b>⚠ 回不来是最大的坑</b> — 利木津 <b>600 路</b> / 急行巴士末班约 <b>21:00–22:00</b>，蹦完<b>没有公交</b>；00:00–04:00 有 <b>심야할증（深夜加成 +20–40%）</b>，연동 → 中文区约 <b>₩60,000–75,000</b>，到酒店约凌晨 3 点。而 <b>8/10 上午你有 talk</b> —— 真要去，建议 <b>01:00 前撤</b>，或干脆挪到别的晚上（见 Day 1 / Day 5）</li>
+            </ul>
+            <div class="routes">
+              <a class="route taxi" href="https://www.google.com/maps/search/?api=1&amp;query=제주%20누웨모루거리" target="_blank" rel="noopener"><span class="pin">打车</span><span class="pts">The Suites → 누웨모루거리</span><span class="mode">~50–60min · ₩45,000+</span></a>
+              <a class="route taxi" href="https://www.google.com/maps/search/?api=1&amp;query=더스위트호텔%20제주" target="_blank" rel="noopener"><span class="pin">打车</span><span class="pts">연동 → The Suites（返程）</span><span class="mode">深夜 ₩60,000–75,000</span></a>
+            </div>
+          </div>
+
+          <div class="warn">
+            <span class="warn-h">进店前必须知道的三件事</span><br>
+            ① <b>「클럽」≠「나이트클럽」。</b>韩语写 <b>클럽（Club）</b>的才是蹦迪店；招牌写 <b>나이트 / 나이트클럽（Night）</b>的是传统「booking」店 —— 服务生会把异性带到你桌，<b>两口子去极不合适</b>（엠파이어나이트、아로마돔나이트 属这类）。<b>룸살롱 / 호스트바 / 유흥주점</b> 是陪酒场所，直接跳过。<br>
+            ② <b>护照随身。</b>外国人查证件只认<b>护照原件</b>，手机照片无效，赌场同理。入场费一般 ₩10,000–20,000 含 1 杯。度假岛着装偏宽松，但<b>拖鞋 / 沙滩裤可能被拦在门口</b>。<br>
+            ③ <b>时间点 + 周日因素。</b>夜店 <b>23:30–02:00</b> 才是高峰，21 点进去基本空场；而<b>周日是韩国夜店最冷的一晚</b>，不少店周日休或提早收摊（아로마돔 只营业周一–周六）。当晚务必先用 <b>KakaoMap（카카오맵）</b>确认还开着再出发。
           </div>
         </div>
         <div class="day-note"><b>交通：</b>济州市→中文区，机场利木津 <b>600 路</b> 或急行巴士约 1 小时；入住 The Suites 后就近活动，不折腾。
@@ -434,6 +521,18 @@
               <li><span class="pick">晚餐</span><b>猪肉汤面</b> <span class="lat">고기국수（猪肉汤面）</span> — <a class="spot" href="https://www.google.com/maps/search/?api=1&amp;query=올래국수%20제주" target="_blank" rel="noopener">올래국수（偶来面馆）</a> 或 <a class="spot" href="https://www.google.com/maps/search/?api=1&amp;query=자매국수%20제주" target="_blank" rel="noopener">자매국수（姐妹面馆）</a>（近机场）</li>
               <li><span class="pick">午餐</span><b>蕨菜牛肉汤</b> <span class="lat">고사리육개장（蕨菜牛肉汤）</span> — <a class="spot" href="https://www.google.com/maps/search/?api=1&amp;query=우진해장국%20제주" target="_blank" rel="noopener">우진해장국（宇进解酒汤）</a>（济州乡土招牌，早 6 点开）</li>
             </ul>
+          </div>
+        </div>
+        <div class="night">
+          <h5>夜店 · 第二顺位之夜</h5>
+          <p class="n-kicker">若 8/8、8/9 都没去成，这晚是最后的合理机会：住回济州市，夜店街近在咫尺，且会议已结束。</p>
+          <ul class="items">
+            <li><b>연동 누웨모루거리</b> — 酒店打车 5–8 分钟，<b>没有跨岛长途打车成本</b>，返程 ₩8,000 以内</li>
+            <li><b>周三属平日</b>：人少、常<b>免入场 + 送 1 杯</b>，但多在 <b>02:00</b> 收摊；想有气氛就挑 <a class="spot" href="https://www.google.com/maps/search/?api=1&amp;query=제주%20클럽링크" target="_blank" rel="noopener">클럽링크（Club Link）</a> / <a class="spot" href="https://www.google.com/maps/search/?api=1&amp;query=제주%20몽키비치" target="_blank" rel="noopener">몽키비치（Monkey Beach）</a></li>
+            <li><b>注意</b>：次日 8/13 东部一日游团<b>上午出发</b>，别玩到收摊</li>
+          </ul>
+          <div class="routes">
+            <a class="route taxi" href="https://www.google.com/maps/search/?api=1&amp;query=제주%20누웨모루거리" target="_blank" rel="noopener"><span class="pin">打车</span><span class="pts">乐天城市 → 누웨모루거리</span><span class="mode">~5–8min · ₩5,000</span></a>
           </div>
         </div>
         <div class="day-note"><b>交通：</b>中文区→济州市，机场大巴 / 急行巴士约 1 小时。会议结束后这天以休整 + 轻松市区游为主。
@@ -586,11 +685,38 @@
       </div>
     </section>
 
+    <section class="maps">
+      <h2>夜店速查 · 제주시 연동（连洞）夜生活</h2>
+      <p class="kicker">Tap a name → Google Maps · 夜店更替快，出发前务必用 KakaoMap（카카오맵）确认当晚是否营业</p>
+      <div class="maps-grid g2">
+        <div class="mcol club">
+          <h4>클럽（Club）· 蹦迪 / 音乐</h4>
+          <ul>
+            <li><a class="spot" href="https://www.google.com/maps/search/?api=1&amp;query=제주%20누웨모루거리" target="_blank" rel="noopener">누웨모루거리（Nuwemaru 街）</a><span class="dish">연동（连洞）夜生活主街 · 原 바오젠거리（宝健路）</span><span class="hrs">先到这条街，再挑店</span></li>
+            <li><a class="spot" href="https://www.google.com/maps/search/?api=1&amp;query=제주%20클럽링크" target="_blank" rel="noopener">클럽링크（Club Link）</a><span class="dish">힙합 라운지（嘻哈 lounge）</span><span class="hrs">20:30–05:00 · 全年无休 · 平日免入场 + 1 杯</span></li>
+            <li><a class="spot" href="https://www.google.com/maps/search/?api=1&amp;query=제주%20몽키비치" target="_blank" rel="noopener">몽키비치（Monkey Beach）</a><span class="dish">EDM / 힙합 大场地</span><span class="hrs">通常免入场费</span></li>
+            <li><a class="spot" href="https://www.google.com/maps/search/?api=1&amp;query=제주%20클럽%20클리프" target="_blank" rel="noopener">클럽 클리프（Club Cliff）</a><span class="dish">正经舞池 · 시청（市厅）/ 동문 一带</span><span class="hrs">21:00–05:00</span></li>
+            <li><a class="spot" href="https://www.google.com/maps/search/?api=1&amp;query=제주%20클럽인디" target="_blank" rel="noopener">클럽 인디（Club Indie）</a><span class="dish">라이브 밴드（乐队 live）· 摇滚，非蹦迪</span><span class="hrs">19:30–01:30 · 约 ₩15,000</span></li>
+          </ul>
+        </div>
+        <div class="mcol north">
+          <h4>바（Bar）· 两人小酌 & 南部替代</h4>
+          <ul>
+            <li><a class="spot" href="https://www.google.com/maps/search/?api=1&amp;query=제주%20레드제플린" target="_blank" rel="noopener">레드제플린（Led Zeppelin）</a><span class="dish">黑胶唱片吧 · 누웨모루거리 上 · 周末有 live</span><span class="hrs">两人去比 club 舒服</span></li>
+            <li><a class="spot" href="https://www.google.com/maps/search/?api=1&amp;query=제주신화월드" target="_blank" rel="noopener">제주신화월드（神话世界）</a><span class="dish">랜딩카지노（Landing 赌场）· 24h · 仅限外国人 · 凭护照</span><span class="hrs">中文区打车 ~20min · 南部唯一夜场</span></li>
+            <li><a class="spot" href="https://www.google.com/maps/search/?api=1&amp;query=서귀포항" target="_blank" rel="noopener">서귀포항（西归浦港）</a><span class="dish">南部酒吧带 · 이중섭거리（李仲燮街）</span><span class="hrs">多在 24:00 前打烊</span></li>
+            <li><span class="note">避开招牌写 <b>나이트（Night）</b>/ 룸살롱 / 호스트바 / 유흥주점 的店 —— 那是陪酒 booking 场所，不是蹦迪 club。</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
   </div>
 
   <footer>
     <b>关于交通链接：</b><b style="color:var(--teal)">蓝色「路线」</b> = 公交 / 步行路线（Google 可显示巴士与站点）；<b style="color:var(--hallabong)">橙色「打车」</b> = 终点定位。Google 地图在韩国<b>不支持驾车导航</b>，打车时只需把终点给司机看，司机用 Kakao&nbsp;T / T-map 自己导航；到当地实时查公交/打车，<b>KakaoMap（카카오맵）或 Naver Map</b> 比 Google 更准。<br>
-    <b>说明：</b>本行程按「无自驾 · 巴士 + 打车 + 跟团」设计，会议日（8/10–8/11）以酒店为大本营。餐厅<b>营业时间 / 是否需预约请出行前再确认</b>；<b>Day 6 东部一日游团</b>建议在 Klook / KKday / 携程 上提前预订济州市出发、含中 / 英文导游的口碑团。
+    <b>说明：</b>本行程按「无自驾 · 巴士 + 打车 + 跟团」设计，会议日（8/10–8/11）以酒店为大本营。餐厅<b>营业时间 / 是否需预约请出行前再确认</b>；<b>Day 6 东部一日游团</b>建议在 Klook / KKday / 携程 上提前预订济州市出发、含中 / 英文导游的口碑团。<br>
+    <b>关于夜店：</b>济州的 club 全在<b>济州市 연동（连洞）</b>，中文 / 西归浦一带没有。住中文区的 8/9–8/11 想去只能跨岛来回打车（单程约 1 小时、来回 ₩10 万上下，且末班巴士 21–22 点就收）；<b>住济州市的 8/8、8/12 才是低成本方案</b>。夜店名单变动频繁，页面所列以出发当晚 <b>KakaoMap（카카오맵）</b>实况为准；外国人入场<b>须带护照原件</b>。
   </footer>
 </div>
 
